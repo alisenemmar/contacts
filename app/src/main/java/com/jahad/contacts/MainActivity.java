@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,43 +27,35 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 3 + 4.5 = 7.5
-        // x + y = result
-        int x = 3;
-        float y = 4.5f;
-        float result = sum(x,y);
+        TextView tv1 = findViewById(R.id.tv1);
+        ImageView img1 = findViewById(R.id.img1);
+        EditText et1 = findViewById(R.id.et1);
+        Button bt1 = findViewById(R.id.bt1);
 
-        TextView color = findViewById(R.id.color);
-        Button bt1 = findViewById(R.id.bt1); // سبز
-        Button bt2 = findViewById(R.id.bt2); // قرمز
-        Button bt3 = findViewById(R.id.bt3); // آبی
+        // کارهایی که با TextView می توان کرد
+        tv1.setText("سلام");
+        tv1.setTextColor(Color.rgb(27,167,168));
 
+        // کارهایی که با ImageView می توان کرد
+        img1.setImageResource(R.drawable.heart);
+
+        // کارهایی که با EditText می توان کرد
+        et1.setText("سلام");
+        et1.setTextColor(Color.BLUE);
+        et1.setHint("سلام");
+        et1.setHintTextColor(Color.rgb(200,200,200));
+
+        // کارهایی که با Button می توان کرد
+        bt1.setText("سلام");
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                color.setText("سبز");
-                color.setTextColor(Color.GREEN);
-            }
-        });
-        bt2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                color.setText("قرمز");
-                color.setTextColor(Color.RED);
-            }
-        });
-        bt3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                color.setText("آبی");
-                color.setTextColor(Color.BLUE);
+                String name = et1.getText().toString();
+                tv1.setText("سلام "+name);
+                tv1.setTextColor(Color.rgb(200,200,200));
             }
         });
 
-    }
-
-    float sum(int x, float y) {
-        return x+y;
     }
 
 }
