@@ -28,33 +28,46 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView tv1 = findViewById(R.id.tv1);
-        ImageView img1 = findViewById(R.id.img1);
         EditText et1 = findViewById(R.id.et1);
+        ImageView img1 = findViewById(R.id.img1);
         Button bt1 = findViewById(R.id.bt1);
 
-        // کارهایی که با TextView می توان کرد
+        // کارهایی که با TextView میتوان انجام داد:
         tv1.setText("سلام");
-        tv1.setTextColor(Color.rgb(27,167,168));
+        tv1.setTextColor(Color.rgb(255,87,160));
 
-        // کارهایی که با ImageView می توان کرد
+        // کارهایی که با Edittext میتوان انجام داد:
+        et1.setHint("hello");
+        et1.setTextColor(Color.rgb(200,200,200));
+        String name = et1.getText().toString().trim().toUpperCase();
+        // ABC abc
+        // SalAAm -> SALAAM
+        tv1.setText(name);
+
+        // کارهایی که با ImageView میتوان انجام داد:
         img1.setImageResource(R.drawable.heart);
 
-        // کارهایی که با EditText می توان کرد
-        et1.setText("سلام");
-        et1.setTextColor(Color.BLUE);
-        et1.setHint("سلام");
-        et1.setHintTextColor(Color.rgb(200,200,200));
-
-        // کارهایی که با Button می توان کرد
-        bt1.setText("سلام");
+        // کارهایی که با Button میتوان انجام داد:
+        // onClick
+        // onLongClick
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = et1.getText().toString();
-                tv1.setText("سلام "+name);
+                tv1.setText("خداحافظ");
                 tv1.setTextColor(Color.rgb(200,200,200));
             }
         });
+        bt1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String name = et1.getText().toString();
+                tv1.setText(name);
+                return true;
+            }
+        });
+
+
+
 
     }
 
