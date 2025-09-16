@@ -34,11 +34,22 @@ public class MainActivity extends AppCompatActivity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = et1.getText().toString();
-                float a = Float.parseFloat(s);
+                String traffic_light = et1.getText().toString();
 
-                if (a>0 && a>10) tv1.setText("سلام");
-                else tv1.setText("خداحافظ");
+                switch (traffic_light) {
+                    case "sabz":
+                        tv1.setText("حرکت");
+                        break;
+                    case "zard":
+                        tv1.setText("احتیاط");
+                        break;
+                    case "ghermez":
+                        tv1.setText("ایست");
+                        break;
+                    default:
+                        tv1.setText("ورودی نامعتبر است.");
+                        break;
+                }
             }
         });
 
