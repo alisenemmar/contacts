@@ -27,46 +27,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView tv1 = findViewById(R.id.tv1);
         EditText et1 = findViewById(R.id.et1);
-        ImageView img1 = findViewById(R.id.img1);
         Button bt1 = findViewById(R.id.bt1);
+        TextView tv1 = findViewById(R.id.tv1);
 
-        // کارهایی که با TextView میتوان انجام داد:
-        tv1.setText("سلام");
-        tv1.setTextColor(Color.rgb(255,87,160));
-
-        // کارهایی که با Edittext میتوان انجام داد:
-        et1.setHint("hello");
-        et1.setTextColor(Color.rgb(200,200,200));
-        String name = et1.getText().toString().trim().toUpperCase();
-        // ABC abc
-        // SalAAm -> SALAAM
-        tv1.setText(name);
-
-        // کارهایی که با ImageView میتوان انجام داد:
-        img1.setImageResource(R.drawable.heart);
-
-        // کارهایی که با Button میتوان انجام داد:
-        // onClick
-        // onLongClick
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv1.setText("خداحافظ");
-                tv1.setTextColor(Color.rgb(200,200,200));
+                String s = et1.getText().toString();
+                int a = Integer.parseInt(s);
+
+                if (a >= 0) tv1.setText("عدد مثبت است!");
+                else tv1.setText("عدد منفی است!");
             }
         });
-        bt1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                String name = et1.getText().toString();
-                tv1.setText(name);
-                return true;
-            }
-        });
-
-
 
 
     }
