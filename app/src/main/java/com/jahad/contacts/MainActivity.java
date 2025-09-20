@@ -38,10 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
                 String result = "";
 
-                int a = 1;
+                /*int a = 1;
                 while (a <= 10) {
                     result = result + a + "  ";
                     a++;
+                }*/
+
+                for (int i=1; i<=10; i++) {
+                    result = result + i + "  ";
                 }
 
                 tv1.setText(result);
