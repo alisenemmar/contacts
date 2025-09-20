@@ -44,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     a++;
                 }*/
 
-                for (int i=1; i<=10; i++) {
-                    if (i%2 == 0) {
-                        result = result + i + "  ";
+                for (int i=1; i<=5; i++) {
+                    for (int j=1; j<=i; j++) {
+                        result = result + j + " ";
                     }
+                    result = result + "\n";
                 }
 
                 tv1.setText(result);
