@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 }*/
 
                 for (int i=1; i<=10; i++) {
-                    result = result + i + "  ";
+                    if (i%2 == 0) {
+                        result = result + i + "  ";
+                    }
                 }
 
                 tv1.setText(result);
