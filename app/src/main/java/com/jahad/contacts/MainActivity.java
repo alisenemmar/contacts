@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,25 +35,19 @@ public class MainActivity extends AppCompatActivity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String traffic_light = et1.getText().toString();
 
-                switch (traffic_light) {
-                    case "sabz":
-                        tv1.setText("حرکت");
-                        break;
-                    case "zard":
-                        tv1.setText("احتیاط");
-                        break;
-                    case "ghermez":
-                        tv1.setText("ایست");
-                        break;
-                    default:
-                        tv1.setText("ورودی نامعتبر است.");
-                        break;
+                String result = "";
+
+                int a = 1;
+                while (a <= 10) {
+                    result = result + a + "  ";
+                    a++;
                 }
+
+                tv1.setText(result);
+
             }
         });
-
 
     }
 
