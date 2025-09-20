@@ -36,26 +36,46 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String result = "";
-
-                /*int a = 1;
-                while (a <= 10) {
-                    result = result + a + "  ";
-                    a++;
-                }*/
-
-                for (int i=1; i<=5; i++) {
-                    for (int j=1; j<=i; j++) {
-                        result = result + j + " ";
-                    }
-                    result = result + "\n";
-                }
-
-                tv1.setText(result);
-
             }
         });
 
+        Toast.makeText(MainActivity.this, "onCreate()", Toast.LENGTH_LONG).show();
+
     }
 
+    @Override
+    protected void onStart() {
+        Toast.makeText(MainActivity.this, "onStart()", Toast.LENGTH_LONG).show();
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Toast.makeText(MainActivity.this, "onRestart()", Toast.LENGTH_LONG).show();
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        Toast.makeText(MainActivity.this, "onResume()", Toast.LENGTH_LONG).show();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(MainActivity.this, "onPause()", Toast.LENGTH_LONG).show();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(MainActivity.this, "onStop()", Toast.LENGTH_LONG).show();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(MainActivity.this, "onDestroy()", Toast.LENGTH_LONG).show();
+        super.onDestroy();
+    }
 }
